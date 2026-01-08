@@ -76,6 +76,8 @@
                   progressBarEmpty.style.display = "";
                   progressBarFull.style.width = `${100 * progress}%`;
                 }).then((unityInstance) => {
+                  // Store unityInstance globally for JavaScript plugins (video player, etc.)
+                  window.unityInstance = unityInstance;
                   loadingCover.style.display = "none";
                   if (canFullscreen) {
                     if (!hideFullScreenButton) {
